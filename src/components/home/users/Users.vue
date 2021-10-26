@@ -1,5 +1,6 @@
 <template>
   <div class="users">
+     <Breadcrumb name1="用户管理" name2="用户列表" />
      <!-- 卡片视图区域 -->
     <el-card class="box-card">
       <el-row :gutter="20">
@@ -98,15 +99,36 @@
         <el-button type="primary" @click="editUserInfo">确 定</el-button>
       </span>
     </el-dialog>
+    <!-- 分配角色 -->
+    <el-dialog title="分配角色" :visible.sync="setRolesDialogVisible" @close="setRolesDialogClosed" width="50%">
+      <div>
+        <p>当前的用户 : {{ userInfo.username }}</p>
+        <p>当前的角色 : {{ userInfo.role_name }}</p>
+        <p>
+          分配新角色:
+          <el-select v-model="selectRoleId" placeholder="请选择">
+            <el-option v-for="item in rolesList" :key="item.id" :label="item.roleName" :value="item.id"> </el-option>
+          </el-select>
+        </p>
+      </div>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="setRolesDialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="saveRolesInfo">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
 <script>
 import { userAddFormRulesMixin } from '@/common/mixin.js'
+import Breadcrumb from '@/components/content/breadcrumb/Breadcrumb'
 export default {
   name:'Users',
   mixins: [userAddFormRulesMixin],
-   data() {
+  components: {
+    Breadcrumb
+  },
+  data() {
     return {
       // 获取用户列表的参数对象
       queryInfo: {
@@ -260,6 +282,37 @@ export default {
         this.getUserList()
       })
     },
+    // 展示分配角色的对话框
+    async setRoles(userInfo) {
+      this.userInfo = userInfo
+      // 再展示对话框之前获取所有的角色列表
+      const { data: res } = await this.$http.get('roles')
+      if (res.meta.status !== 200) {
+        return this.$message.error('获取角色列表失败!')
+      }
+      this.rolesList = res.data
+      this.setRolesDialogVisible = true
+    },
+    // 点击按钮,分配角色
+    async saveRolesInfo() {
+      if (!this.selectRoleId) {
+        return this.$message.error('请选择要分配的角色!')
+      }
+      const { data: res } = await this.$http.put(`users/${this.userInfo.id}/role`, {
+        rid: this.selectRoleId
+      })
+      if (res.meta.status !== 200) {
+        return this.$message.error('更新角色失败!')
+      }
+      this.$message.success('更新角色成功!')
+      this.getUserList()
+      this.setRolesDialogVisible = false
+    },
+    // 分配角色对话框关闭
+    setRolesDialogClosed() {
+      this.selectRoleId = ''
+      this.userInfo = ''
+    }
   }
 }
 </script>

@@ -6,6 +6,10 @@ const Home = () => import(/* webpackChunkName: "login_home_welome" */ 'component
 const Welcome = () => import(/* webpackChunkName: "login_home_welome" */ 'components/home/welcome/Welcome')
 
 const Users = () => import('components/home/users/Users')
+const Rights = () => import('components/home/power/rights/Rights')
+const Roles = () => import('components/home/power/roles/Roles')
+
+
 
 Vue.use(VueRouter)
 
@@ -33,6 +37,14 @@ const routes = [
       {
         path: '/users',
         component: Users
+      },
+      {
+        path: '/rights',
+        component: Rights
+      },
+      {
+        path: '/roles',
+        component: Roles
       },
     ]
   },
