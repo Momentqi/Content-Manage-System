@@ -1,14 +1,15 @@
 <template>
-  <div class="home">
-ads dsdsd
+  <div>
+  qi
   </div>
 </template>
 
 <script>
-
 export default {
-  name: 'Home',
-  components: {
-  }
+
 }
 </script>
+
+<style>
+
+</style>
