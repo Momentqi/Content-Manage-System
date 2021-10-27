@@ -1,0 +1,41 @@
+[33mcommit cc1cd115a29e17dbb30015077999dd33a7bd9289[m[33m ([m[1;36mHEAD -> [m[1;32mnewbranch[m[33m, [m[1;31morigin/order[m[33m, [m[1;31morigin/newbranch[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/goods_list[m[33m, [m[1;32morder[m[33m, [m[1;32mmain[m[33m, [m[1;32mgoods_list[m[33m, [m[1;32mD[m[33m)[m
+Author: 依旧 <594903591@qq.com>
+Date:   Wed Oct 27 17:53:27 2021 +0800
+
+    完成商品功能开发
+
+[33mcommit a17a82eb5a77a8e348c7b203050cb57e7558df5d[m[33m ([m[1;31morigin/goods_params[m[33m, [m[1;32mgoods_params[m[33m)[m
+Author: 依旧 <594903591@qq.com>
+Date:   Wed Oct 27 12:21:31 2021 +0800
+
+    完成分类参数
+
+[33mcommit 1c3c0608168e3d5365183ec20938695489504827[m[33m ([m[1;31morigin/goods_cate[m[33m, [m[1;32mgoods_cate[m[33m)[m
+Author: 依旧 <594903591@qq.com>
+Date:   Wed Oct 27 08:30:28 2021 +0800
+
+    完成分类
+
+[33mcommit 86c663edb896287c0773fa2ce76810ffcaa12537[m[33m ([m[1;31morigin/rights[m[33m, [m[1;32mrights[m[33m)[m
+Author: 依旧 <594903591@qq.com>
+Date:   Tue Oct 26 18:54:59 2021 +0800
+
+    成功权限
+
+[33mcommit 7ff9020bbef737353c69e69cad1ed9aa3a43f7c8[m[33m ([m[1;31morigin/user[m[33m, [m[1;32muser[m[33m)[m
+Author: 依旧 <594903591@qq.com>
+Date:   Tue Oct 26 15:33:56 2021 +0800
+
+    成功
+
+[33mcommit cc885ec5d363985c8e3bb4e78ede175e5f1ce792[m
+Author: 依旧 <594903591@qq.com>
+Date:   Mon Oct 25 17:22:07 2021 +0800
+
+    后台管理
+
+[33mcommit 7f40f2a99f83698958ab4ef0667b48b53dc83bcc[m
+Author: 依旧 <594903591@qq.com>
+Date:   Mon Oct 25 15:42:43 2021 +0800
+
+    init
