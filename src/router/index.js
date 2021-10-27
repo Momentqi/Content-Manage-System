@@ -1,13 +1,17 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-const Login = () => import(/* webpackChunkName: "login_home_welome" */ 'components/login/Login')
-const Home = () => import(/* webpackChunkName: "login_home_welome" */ 'components/home/Home')
-const Welcome = () => import(/* webpackChunkName: "login_home_welome" */ 'components/home/welcome/Welcome')
+const Login = () => import('components/login/Login')
+const Home = () => import('components/home/Home')
+const Welcome = () => import('components/home/welcome/Welcome')
 
 const Users = () => import('components/home/users/Users')
 const Rights = () => import('components/home/power/rights/Rights')
 const Roles = () => import('components/home/power/roles/Roles')
+
+const Cate = () => import(/* webpackChunkName: "Cate_Params" */ 'components/home/goods/cate/Cate')
+
+
 
 
 
@@ -45,6 +49,10 @@ const routes = [
       {
         path: '/roles',
         component: Roles
+      },
+      {
+        path: '/categories',
+        component: Cate
       },
     ]
   },
