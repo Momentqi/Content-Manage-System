@@ -9,7 +9,8 @@ const Users = () => import('components/home/users/Users')
 const Rights = () => import('components/home/power/rights/Rights')
 const Roles = () => import('components/home/power/roles/Roles')
 
-const Cate = () => import(/* webpackChunkName: "Cate_Params" */ 'components/home/goods/cate/Cate')
+const Cate = () => import( 'components/home/goods/cate/Cate')
+const Params = () => import( 'components/home/goods/params/Params')
 
 
 
@@ -53,6 +54,10 @@ const routes = [
       {
         path: '/categories',
         component: Cate
+      },
+      {
+        path: '/params',
+        component: Params
       },
     ]
   },
