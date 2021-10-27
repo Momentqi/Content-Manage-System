@@ -256,7 +256,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .el-steps {
   margin: 15px 0;
 }

@@ -124,7 +124,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .el-table {
   margin: 15px 0 0;
 }
